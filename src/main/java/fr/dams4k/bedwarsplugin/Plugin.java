@@ -12,9 +12,12 @@ import fr.dams4k.bedwarsplugin.commands.MakeBedwarsCommand;
 
 public class Plugin extends JavaPlugin {
     public List<BedwarsGame> bedwarsGames = new ArrayList<>();
+    private static Plugin instance;
 
     @Override
     public void onEnable() {
+        instance = this;
+
         getCommand("bedwarsjoin").setExecutor(new JoinCommand(this));
         getCommand("bedwarscreate").setExecutor(new CreateTeamCommand(this));
         getCommand("bedwarsmake").setExecutor(new MakeBedwarsCommand(this));
@@ -27,5 +30,9 @@ public class Plugin extends JavaPlugin {
             }
         }
         return null;
+    }
+
+    public static Plugin getInstance() {
+        return instance;
     }
 }

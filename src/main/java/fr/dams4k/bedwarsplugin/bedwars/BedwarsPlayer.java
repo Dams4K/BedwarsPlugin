@@ -1,10 +1,14 @@
 package fr.dams4k.bedwarsplugin.bedwars;
 
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.scheduler.BukkitScheduler;
+
+import fr.dams4k.bedwarsplugin.Plugin;
 
 public class BedwarsPlayer {
     private Player player;
@@ -21,7 +25,13 @@ public class BedwarsPlayer {
             return;
         }
 
-        
+        BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
+        scheduler.scheduleSyncDelayedTask(Plugin.getInstance(), new Runnable() {
+               @Override
+               public void run() {
+                   System.out.println("+1s");
+               }
+        }, 20);
     }
 
     public void permanentKill() {

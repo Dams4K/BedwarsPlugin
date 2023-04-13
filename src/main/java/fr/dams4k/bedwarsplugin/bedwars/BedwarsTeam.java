@@ -3,6 +3,7 @@ package fr.dams4k.bedwarsplugin.bedwars;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -12,7 +13,7 @@ public class BedwarsTeam {
     private String name;
     private boolean bedRemaining = true;
 
-    private Location respawnLocation = null;
+    private Location respawnLocation = new Location(Bukkit.getWorld("world"), 0, 100, 0); // TODO: replace this by null
 
     public BedwarsTeam(String name) {
         this.name = name;
