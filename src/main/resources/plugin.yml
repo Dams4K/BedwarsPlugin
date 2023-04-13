@@ -1,0 +1,14 @@
+main: fr.dams4k.bedwarsplugin.Plugin
+name: BedwarsPlugin
+author: Dams4K
+version: 1.0.0
+commands:
+  bedwarsjoin:
+    aliases: ["bwjoin", "bwj"]
+    usage: "/bedwarsjoin <game> <team> <player>"
+  bedwarscreate:
+    aliases: ["bwcreate", "bwc"]
+    usage: "/bedwarscreate <game> <team>"
+  bedwarsmake:
+    aliases: ["bwmake", "bwm"]
+    usage: "/bedwarsmake <world> [game]"
